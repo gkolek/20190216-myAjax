@@ -1,36 +1,36 @@
 class Users {
     constructor(containerId) {
-        this.container = document.getElementById(containerId)
+        this.container = document.getElementById(containerId);
 
         this.users = {
             results: [{
-                name: 'ala',
-                surname: 'makota'
+                name: 'Jan',
+                surname: 'Kowalski'
+            }, {
+                name: 'Mich',
+                surname: 'Surname'
             }]
-        }
+        };
 
-        this.init()
+        this.init();
     }
     init() {
-        //this.fetchUsers()
-        this.render()
+        this.fetchUsers();
+        this.render();
     }
-
     fetchUsers() {
 
-        //this.render(;)
+        //this.render();
     }
-
     render() {
-        const ul = document.createElement('ul')
+        const ul = document.createElement('ul');
         this.users.results.forEach(elem => {
-            const li = document.createElement('li')
-            li.innerHTML = $`{elem.name} ${elem.surname}`
-            ul.appendChild(li)
-            console.log(elem)
-        })
-        this.container.appendChild(ul)
+            const li = document.createElement('li');
+            li.innerHTML = `${elem.name} ${elem.surname}`;
+            ul.appendChild(li);
+        });
+        this.container.appendChild(ul);
     }
 }
 
-const list = new Users('root')
+const list = new Users('root');
