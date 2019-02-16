@@ -11,16 +11,24 @@ class Users {
     init() {
         this.fetchUsers();
         this.render();
+        this.myPromise()
     }
 
-    mypromise() {
-        cosnt inStorehouse = true;
-        const menu = ['sandwich', 'soup', 'drink];
-const order = 'soup'
+    myPromise() {
+        const inStorehouse = true;
+        const menu = ['sandwich', 'soup', 'drink']
+        const order = 'soup'
 
-        const getMyOrder = new Promise((resolve, reject => {
 
-        }))
+
+        const getMyOrder = new Promise((resolve, reject) => {
+            if (order in menu) {
+                resolve('hurra, jest w menu :)')
+            } else {
+                reject('oh, nie mam w menu :(')
+            }
+
+        })
     }
 
     fetchUsers() {
